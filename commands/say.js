@@ -7,9 +7,18 @@ module.exports.help = {
 exports.run = async (client, message, args) => {
     message.delete();
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply('Você não tem a permissão `MANAGE_MESSAGES`')
-    let sendMessage = message.content.substring(4);
+    let sendMessage = message.content.substring(7);
 
-    message.channel.send(sendMessage);
-    message.channel.send(`||** _Autor: ${message.author.tag}_**||`, message.author.displayAvatarURL({dynamic: true}));
+    if(sendMessage === "<@!825145028757159976>") {
+      message.reply('Por favor, não mencione EVERYONE ou HERE!');
+    }
+    
+    let Say = new Discord.MessageEmbed() 
+    .setColor("#6400b6")
 
+    .addField(`${sendMessage}`, `||Autor: ${message.author.tag}||`)
+
+        console.log(`Say: ${sendMessage}, usuario: ${message.author.tag}`)
+
+    message.channel.send(Say)
 }

@@ -1,9 +1,11 @@
-const Discord = require("discord.js");
-
-module.exports.run = async (bot, message, args) => {
-               message.channel.send('Pong!');
-}
+const Discord = require("discord.js"); 
 
 module.exports.help = {
-  name:"ping"
-}
+    name:"ping"
+  }
+  exports.run = async (client, message, args) => {
+    message.channel.send('Carregando...').then (async (msg) =>{
+      msg.delete()
+      message.channel.send(`🏓 A latencia é de: ${msg.createdTimestamp - message.createdTimestamp}ms. A latencia de api é: ${Math.round(client.ws.ping)}ms`);
+    })
+  }
