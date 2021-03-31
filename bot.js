@@ -21,13 +21,24 @@ fs.readdir("./commands/", (err, files) => {
   });
 
 });
-//Add Role And Welcome New Member
 
-//Playing Message
+
+bot.on("guildCreate", guild => {
+  console.log(`O bot entrou no servidor: ${guild.name} (ID do servidor: ${guild.id}). Membros: ${guild.memberCount} membros!`);
+  bot.user.setActivity(`digite pp!help para ver os comandos! | Estamos em ${bot.guilds.cache.size} servidores!`, {type: "PLAYING"});
+});
+
+bot.on("guildDelete", guild => {
+  console.log(`O bot foi removido do servidor: ${guild.name} (ID do servidor: ${guild.id})`);
+  bot.user.setActivity(`digite pp!help para ver os comandos! | Estamos em ${bot.guilds.cache.size} servidores!`, {type: "PLAYING"});
+});
+
+
+
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.cache.size} servers!`);
 
-  bot.user.setActivity(`ESTAMOS EM REFORMA | Estamos em ${bot.guilds.cache.size} servidores!`, {type: "PLAYING"});
+  bot.user.setActivity(`digite pp!help para ver os comandos! | Estamos em ${bot.guilds.cache.size} servidores!`, {type: "PLAYING"});
 });
 
 //Command Manager
@@ -47,6 +58,19 @@ bot.on("message", async message => {
   if(commandfile) commandfile.run(bot,message,args);
 
 });
+
+bot.on("message", message =>{
+  if (message.author.bot) return;
+
+  let msg = message.content.toLowerCase();
+
+  let resp = `**Oi! Meu prefixo é 'pp!' Use pp!help para ver os comandos!**`;
+
+  if (msg == '<@!816515410441535518>' || msg == '<@816515410441535518>'){
+      message.channel.send(resp)
+  }
+});
+
 
 //Token need in token.json
 bot.login(config.token);
