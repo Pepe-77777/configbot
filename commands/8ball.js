@@ -4,13 +4,19 @@ var fortunes = [
     "sim",
     "não",
     "talvez",
-    "não sei"
+    "não sei",
+    "melhor não responder",
+    "Provavelmente Sim",
+    "Nem perto",
+    "Provavelmente Não",
+    "Definitivamente não",
+    "Definitivamente sim"
 ];
 
 
 module.exports.run = async (bot, message, args) => {
 
-    let sendMessage = message.content.substring(9);
+    let sendMessage = message.content.substring(11);
 
     message.delete();
     

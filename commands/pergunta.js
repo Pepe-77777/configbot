@@ -4,13 +4,14 @@ var fortunes = [
     "sim",
     "não",
     "talvez",
-    "não sei"
+    "não sei",
+    "melhor não responder"
 ];
 
 
 module.exports.run = async (bot, message, args) => {
 
-    let sendMessage = message.content.substring(9);
+    let sendMessage = message.content.substring(14);
 
     message.delete();
     
@@ -24,5 +25,5 @@ message.channel.send(`||**_Pergunta:_** ${sendMessage}||`);
 }
 
 module.exports.help = {
-    name: "8ball"
+    name: "pergunta"
 }

@@ -19,6 +19,7 @@ exports.run = async (client, message, args) => {
     .addField(':wrench:  Canais', `${message.guild.channels.cache.filter(chan => chan.type === 'voice').size} Chats de Voz | ${message.guild.channels.cache.filter(chan => chan.type === 'text').size} Canais de Texto | ${message.guild.channels.cache.filter(chan => chan.type === 'category').size} Categorias | ${Math.round((message.guild.channels.cache.filter(chan => chan.type === 'voice').size / message.guild.channels.cache.size) * 100)}% Chats de Voz | ${Math.round((message.guild.channels.cache.filter(chan => chan.type === 'text').size / message.guild.channels.cache.size) * 100)}% Canais de Texto | ${Math.round((message.guild.channels.cache.filter(chan => chan.type === 'category').size / message.guild.channels.cache.size) * 100)}% Categorias`, true)
     .addField(":inbox_tray:  Você Entrou", message.member.joinedAt)
     .setFooter(` • Autor ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
+    .setThumbnail(`${message.guild.iconURL({dynamic: true})}?size=4096`)
 
     message.channel.send(serverembed);
 

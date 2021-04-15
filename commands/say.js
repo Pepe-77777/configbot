@@ -7,7 +7,7 @@ module.exports.help = {
 exports.run = async (client, message, args) => {
     message.delete();
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply('Você não tem a permissão `MANAGE_MESSAGES`')
-    let sendMessage = message.content.substring(7);
+    let sendMessage = message.content.substring(9);
 
     if(sendMessage === "<@!825145028757159976>") {
       message.reply('Por favor, não mencione EVERYONE ou HERE!');

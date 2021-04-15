@@ -9,10 +9,12 @@ module.exports.run = async (bot, message, args) => {
 }
 
   const user = message.mentions.users.first() || message.author;
+  let avatar5 = `${user.avatarURL()}?size=4096`;
   const avatarEmbed = new Discord.MessageEmbed()
+      .setDescription(`<@!${user.id}>`+" Clique aqui para fazer o "+"[download]("+avatar5+")")
       .setColor(0x333333)
       .setAuthor(user.username)
-      .setImage(user.displayAvatarURL())
+      .setImage((`${user.avatarURL()}?size=4096`))
   message.channel.send(avatarEmbed);
 
  message.delete();
