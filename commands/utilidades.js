@@ -21,6 +21,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("pepe!cpu", "Veja as informações da CPU")
     .addField("pepe!servericon", "Veja o icone do server")
     .addField("pepe!userinfo", "Veja as informações do usuário")
+    .addField("pepe!sugestão", "Mande uma sugestão para o bot!")
     .setFooter(`Autor ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
  
     message.channel.send(utilidades);
