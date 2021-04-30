@@ -16,6 +16,7 @@ var abracos = [
     "https://giphy.com/gifs/hug-love-winnie-the-pooh-llmZp6fCVb4ju"
 ];
 
+message.delete();
 
   const user = message.mentions.users.first() || message.author;
 
@@ -25,7 +26,6 @@ var abracos = [
     message.channel.send(`${abracos[Math.floor(Math.random() * abracos.length)]}`)
     message.channel.send(`Abraços!!!`)
 
- message.delete();
 }
   
   module.exports.help = {

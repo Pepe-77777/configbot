@@ -6,6 +6,6 @@ module.exports.help = {
 
 exports.run = async (client, message, args) => {
     message.delete();
-    let sendMessage = message.content.substring(12);
+    let sendMessage = message.content.substring(13);
     message.reply(`Resultado da pesquisa: https://www.youtube.com/results?search_query=${sendMessage.replace( /\s/g, "+")}`)
 }

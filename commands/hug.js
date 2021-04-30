@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
 
   if (!message.mentions.users.size) {
-    message.delete();
     message.reply('Ninguém foi mencionado!');
     return;
 }
@@ -25,7 +25,6 @@ var abracos = [
     message.channel.send(`${abracos[Math.floor(Math.random() * abracos.length)]}`)
     message.channel.send(`Abraços!!!`)
 
- message.delete();
 }
   
   module.exports.help = {

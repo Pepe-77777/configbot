@@ -6,6 +6,7 @@ module.exports.help = {
   }
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   let HelpInvite = `https://discord.gg/EmMr3rpNqu`;
     let utilidades = new Discord.MessageEmbed() 
     .setColor("#6400b6")
@@ -21,10 +22,12 @@ module.exports.run = async (bot, message, args) => {
     .addField("pepe!cpu", "Veja as informações da CPU")
     .addField("pepe!servericon", "Veja o icone do server")
     .addField("pepe!userinfo", "Veja as informações do usuário")
-    .addField("pepe!sugestão", "Mande uma sugestão para o bot!")
+    .addField("pepe!criar", "Bote seu server no banco de dados do bot, podendo criar perfil etc!")
+    .addField("pepe!editar", "Edite seu pepe!criar")
+    .addField("pepe!apagar", "Apague o seu pepe!criar")
+    .addField("pepe!sugestão", "Mande uma sugesão!")
     .setFooter(`Autor ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
  
     message.channel.send(utilidades);
 
-   message.delete();
 }

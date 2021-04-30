@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+    message.delete();
 
   if (!message.mentions.users.size) {
-    message.delete();
     message.reply('Ninguém foi mencionado!');
     return;
 }
@@ -45,8 +45,6 @@ module.exports.run = async (bot, message, args) => {
         message.channel.send(`Não sei não em`)
     }
 
-
- message.delete();
 }
   
   module.exports.help = {

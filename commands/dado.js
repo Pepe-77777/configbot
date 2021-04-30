@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-
+    message.delete();
+    
 var dado = [
     "1",
     "2",
@@ -14,7 +15,6 @@ var dado = [
 
     message.channel.send(`**${message.author} Girou um dado e caiu em ${dado[Math.floor(Math.random() * dado.length)]}**`)
 
- message.delete();
 }
   
   module.exports.help = {

@@ -7,6 +7,7 @@ module.exports.help = {
   }
 
 exports.run = async (client, message, args) => {
+   message.delete();
     const isValidNickname = string => NICKNAME_REGEX.test(string);
     const NICKNAME_REGEX = /^[a-zA-Z0-9_]{3,16}$/;
 
@@ -58,5 +59,4 @@ exports.run = async (client, message, args) => {
           message.channel.send("Um erro ocorreu ao pegar o nick.");
           console.error(err);
        });
-       message.delete();
 }

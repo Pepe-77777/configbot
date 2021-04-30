@@ -5,19 +5,19 @@ module.exports.run = async (bot, message, args) => {
     message.delete()
 
     let sendMessage = message.content.substring(11);
-    const trump = `https://api.no-api-key.com/api/v2/trump?message=${sendMessage}`;
+    const ideia = `https://vacefron.nl/api/changemymind?text=${sendMessage}`;
 
 
     let serverembed = new Discord.MessageEmbed() 
     .setColor("#6400b6")
-    .setImage(`${trump.replace( /\s/g, "+")}`)
+    .setImage(`${ideia.replace( /\s/g, "+")}`)
     .addField(`Autor:`, `${message.author.tag}`)
-    console.log(`Trump: ${trump.replace( /\s/g, "+")}`)
+    console.log(`Mude minha ídeia:: ${ideia.replace( /\s/g, "+")}`)
 
     message.channel.send(serverembed);
 
 }
   
   module.exports.help = {
-      name: "trump"
+      name: "ideia"
   }

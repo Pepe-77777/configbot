@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+   message.delete()
           let mentioned = message.mentions.users.array();
     
           if (args.length == 0) { // Get user's own information
@@ -79,7 +80,6 @@ module.exports.run = async (bot, message, args) => {
              message.channel.send("Too many arguments!");
           }
        
-message.delete();
 }
   
   module.exports.help = {

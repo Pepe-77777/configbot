@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
     let HelpInvite = `https://discord.gg/EmMr3rpNqu`;
     let botinfo = new Discord.MessageEmbed() 
     .setColor("#6400b6")
@@ -14,7 +15,6 @@ module.exports.run = async (bot, message, args) => {
 
     message.channel.send(botinfo);
 
-   message.delete();
 }
 
 module.exports.help = {

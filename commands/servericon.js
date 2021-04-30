@@ -5,7 +5,8 @@ module.exports.help = {
   }
 
 exports.run = async (client, message, args) => {
-
+  message.delete();
+  
     let serverembed = new Discord.MessageEmbed() 
     .setColor("#6400b6")
     .setTitle(`Server Icon`)
@@ -14,5 +15,4 @@ exports.run = async (client, message, args) => {
 
     message.channel.send(serverembed);
 
-   message.delete();
  }

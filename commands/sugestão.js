@@ -1,20 +1,18 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const Discord = require("discord.js"); 
 
-module.exports.run = async (bot, message, args) => {
-  
-        let message1 = message.content.toLowerCase();
-        let sendChannel = `827635163101921342`;
-        
-            message.delete();
-            let sendMessage = message.content.substring(14);
-                message.reply('Sugestão: ' + sendMessage + ` Foi feita com sucesso! Veja <#827635163101921342> para votar! *Sugestão enviada por ${message.author}*`)
-                message.client.channels.fetch('827635163101921342')
-                    .then(channel => {
-                        channel.send(`Sugestão: **${sendMessage}**, feita por ${message.author}`)
-                    })
-                }
-    
-  module.exports.help = {
-      name: "sugestão"
+module.exports.help = {
+    name:"sugestão"
   }
+
+exports.run = async (client, message, args) => {
+message.delete();
+ let message1 = message.content.toLowerCase();
+        message2 = message1.replace('pepe!sugestão ', '');
+        message.channel.send('Sugestão ' + `**${message2}**`+ ' foi enviada com sucesso! verifique <#827635163101921342> para votar!')
+        client.channels.cache.get('827635163101921342').send('Sugestão: ' + `**${message2}**` + ` ||*Sugestão enviada por* *${message.author}*||`)
+            .then(function (message) {
+                message.react('✅');
+                message.react('❌');
+            })
+    
+        }

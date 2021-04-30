@@ -6,6 +6,7 @@ module.exports.help = {
   }
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   let HelpInvite = `https://discord.gg/EmMr3rpNqu`;
     let Help = new Discord.MessageEmbed() 
     .setColor("#6400b6")
@@ -25,9 +26,9 @@ module.exports.run = async (bot, message, args) => {
     .addField("pepe!youtube", "Pesquise alguma coisa no youtube")
     .addField("pepe!ship", "Faça um teste de ship...")
     .addField("pepe!maiorpalavradobrasil", "Veja a maior palavra do brasil!")
+    .addField("pepe!ideia", "Mude minha ídeia!")
     .setFooter(`Autor ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
 
     message.channel.send(Help);
 
-   message.delete();
 }

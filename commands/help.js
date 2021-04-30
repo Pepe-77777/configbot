@@ -6,6 +6,7 @@ module.exports.help = {
   }
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
     let HelpInvite = `https://discord.gg/EmMr3rpNqu`;
     let Help = new Discord.MessageEmbed() 
     .setColor("#6400b6")
@@ -18,6 +19,5 @@ module.exports.run = async (bot, message, args) => {
 
     message.channel.send(Help);
 
-   message.delete();
     }
   

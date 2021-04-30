@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
+  message.delete();
+  
   if (!message.mentions.users.size) {
     message.delete();
     message.reply('Ninguém foi mencionado!');
@@ -17,7 +19,6 @@ module.exports.run = async (bot, message, args) => {
       .setImage((`${user.avatarURL()}?size=4096`))
   message.channel.send(avatarEmbed);
 
- message.delete();
 }
   
   module.exports.help = {

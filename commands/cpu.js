@@ -7,6 +7,7 @@ module.exports.help = {
 
 module.exports.run = async (bot, message, args) => {
 var os = require("os");
+message.delete();
 
 //Create function to get CPU information
 function cpuAverage() {
@@ -52,6 +53,5 @@ setTimeout(function() {
 
   //Output result to console
   message.channel.send(`O PC do Pepê esta usando: ${percentageCPU}% de CPU.`);
-  message.delete();
 }, 100);
 }
