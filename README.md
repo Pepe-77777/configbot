@@ -1,4 +1,5 @@
 # PepeBOT
+[![Discord Bots](https://top.gg/api/widget/816515410441535518.svg)](https://top.gg/bot/816515410441535518)
 
 Por favor não copiar o BOT!
 
