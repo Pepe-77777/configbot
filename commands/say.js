@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply('Você não tem a permissão `MANAGE_MESSAGES`')
     let sendMessage = message.content.substring(9);
     
-    message.channel.send(`${sendMessage}` + `,  ` + `||**Enviado por ${message.author}**||`)
+    message.channel.send(`${sendMessage}\n\n - ${message.author}`)
         console.log(`Say: ${sendMessage}, usuario: ${message.author.tag}`)
 
 }

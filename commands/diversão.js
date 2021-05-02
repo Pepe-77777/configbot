@@ -27,6 +27,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("pepe!ship", "Faça um teste de ship...")
     .addField("pepe!maiorpalavradobrasil", "Veja a maior palavra do brasil!")
     .addField("pepe!ideia", "Mude minha ídeia!")
+    .addField("pepe!flip", "Vire uma moeda!")
     .setFooter(`Autor ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
 
     message.channel.send(Help);
